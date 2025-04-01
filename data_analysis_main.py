@@ -1,6 +1,6 @@
 ﻿import os
 import pandas as pd
-from data_process import process_education_data
+from data_process import process_data
 from data_summary import save_statistics_to_csv
 from generate_barplots import generate_barplots
 from generate_boxplots import generate_boxplots
@@ -21,7 +21,7 @@ def main():
 
     os.makedirs("plots", exist_ok=True)
 
-    process_education_data(df)
+    process_data(df)
     save_statistics_to_csv(df, numeric_categories=['Application order', 'Previous qualification (grade)',
                                                    'Age at enrollment',
                                                    'Admission grade',

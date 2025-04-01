@@ -5,7 +5,7 @@ import seaborn as sns
 
 def plot_age_distribution(df):
     plt.figure(figsize=(14, 7))
-    sns.countplot(x="Age at enrollment", data=df, palette="Set2")
+    sns.countplot(x="Age at enrollment", data=df, palette="Set2", hue="Age at enrollment", legend=False)
     plt.title("Distribution of Students by Age at Enrollment", fontsize=14, fontweight="bold")
     plt.xlabel("Age at Enrollment", fontsize=12)
     plt.ylabel("Number of Students", fontsize=12)
@@ -19,7 +19,7 @@ def plot_age_distribution(df):
 
 def plot_course_distribution(df):
     plt.figure(figsize=(14, 7))
-    sns.countplot(x="Course Text", data=df, palette="Set2")
+    sns.countplot(x="Course Text", data=df, palette="Set2", hue="Course Text", legend=False)
     plt.title("Distribution of Students by Course", fontsize=14, fontweight="bold")
     plt.xlabel("Course Name", fontsize=12)
     plt.ylabel("Number of Students", fontsize=12)

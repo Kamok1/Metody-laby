@@ -15,7 +15,8 @@ def plot_unemployment_rate_distribution(df):
 
 def plot_grade_distribution_by_gender(df):
     plt.figure(figsize=(14, 7))
-    sns.violinplot( x="Gender Text", y="Curricular units 1st sem (grade)", data=df, palette="Set2", dodge=False, split=True)
+    sns.violinplot( x="Gender Text", y="Curricular units 1st sem (grade)", data=df, palette="Set2", hue="Gender Text",
+                     legend=False, dodge=True, split=True)
     plt.title("Distribution of 1st Semester Grades by Gender")
     plt.xlabel("Gender")
     plt.ylabel("Grade (1st Semester)")

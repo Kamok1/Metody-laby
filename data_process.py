@@ -59,7 +59,7 @@ def add_text_columns(df):
     df['International Text'] = df['International'].map(bool_map)
     return df
 
-def process_education_data(df):
+def process_data(df):
     df = map_education_levels(df)
     df = categorize_mothers_qualification(df)
     df = generate_target_encoded(df)
