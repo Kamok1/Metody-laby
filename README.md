@@ -144,5 +144,3 @@ output/
 ├── numeric_statistics.csv
 ├── categorical_statistics.csv
 ```
-
-All plots are saved in PNG format (300 DPI) and can be found in the appropriate subdirectories.
