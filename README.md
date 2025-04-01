@@ -31,11 +31,8 @@ To execute the full analysis and generate all visualizations and summaries, run:
 python data_analysis_main.py
 ```
 
-## Running individual scripts
+## Running individual functions
 
-Each script can be executed separately if needed. Below are examples of how to call each module.
-
-Note: All plotting functions require a preprocessed DataFrame. Use `process_education_data(df)` from `data_process.py` before passing it to any visualization function.
 
 ### Data processing
 
