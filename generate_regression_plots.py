@@ -26,7 +26,7 @@ def plot_filtered_linear_regression(df):
 def plot_filtered_average_proportion(df):
     age_group_stats = df.groupby('Age at enrollment').agg(
         count=('Target encoded', 'size'),
-        mean=('Target encoded', 'mean')
+        mean=('Target encoded', 'mean'),
     ).reset_index()
     age_group_filtered = age_group_stats[age_group_stats['count'] > 10]
 

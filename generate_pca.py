@@ -16,15 +16,13 @@ def plot_pca(df, attributes, n_components=2, exclude_enrolled=True):
     scaler = StandardScaler()
     scaled_features = scaler.fit_transform(features_df)
     pca = PCA(n_components=n_components)
-    principal_components = pca.fit_transform(scaled_features)
-    pca_df = pd.DataFrame(
-        data=principal_components,
-        columns=[f'PC{i + 1}' for i in range(n_components)]
-    )
+
+    pca_result = pca.fit_transform(scaled_features)
+    pca_df = pd.DataFrame(data=pca_result,columns=[f'PC{i + 1}' for i in range(n_components)])
     pca_df['Target'] = df_filtered['Target'].values
 
     plt.figure(figsize=(14, 7))
-    sns.scatterplot(x='PC1', y='PC2', data=pca_df, hue='Target', alpha=0.5,)
+    sns.scatterplot(x='PC1', y='PC2', data=pca_df, hue='Target', alpha=0.5)
 
     if exclude_enrolled:
         plt.title('PCA of Features (without Enrolled)')

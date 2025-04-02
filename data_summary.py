@@ -48,7 +48,8 @@ def get_categorical_statistics(df, categorical_categories = None):
     return cat_stats
 
 def save_statistics_to_csv(df, directory = "output", numeric_filename='numeric_statistics.csv',
-                           categorical_filename='categorical_statistics.csv', numeric_categories = None, categorical_categories = None,):
+                           categorical_filename='categorical_statistics.csv', numeric_categories = None,
+                           categorical_categories = None):
     os.makedirs(directory, exist_ok=True)
 
     numeric_stats = get_numeric_statistics(df, numeric_categories)

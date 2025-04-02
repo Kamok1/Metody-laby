@@ -6,9 +6,6 @@ import seaborn as sns
 
 def plot_target_vs_course(df):
     course_target_distribution = df.groupby("Course Text")["Target"].value_counts(normalize=True).mul(100).reset_index(name="Percentage")
-
-    os.makedirs('plots/barplots', exist_ok=True)
-
     plt.figure(figsize=(14, 7))
     sns.set_theme(style="whitegrid")
     sns.barplot(x="Course Text",y="Percentage",hue="Target", data=course_target_distribution, palette="coolwarm")

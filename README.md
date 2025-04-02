@@ -41,16 +41,13 @@ Contains functions for mapping, encoding, and preprocessing the dataset.
 
 Example usage:
 ```python
-from data_process import process_education_data
-df_cleaned = process_education_data(df)
+from data_process import process_data
+df_cleaned = process_data(df)
 ```
 
 ### Data summary
 
-File: `data_summary.py`  
-Generates CSV files with descriptive statistics.
-
-Example usage:
+File: `data_summary.py`
 ```python
 from data_summary import save_statistics_to_csv
 save_statistics_to_csv(df_cleaned)
