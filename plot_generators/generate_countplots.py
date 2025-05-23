@@ -47,7 +47,7 @@ def plot_target_by_debtor(df):
 
 
 def generate_countplots(df):
-    os.makedirs('plots/countplots', exist_ok=True)
+    os.makedirs('../plots/countplots', exist_ok=True)
     plot_target_by_debtor(df)
     plot_age_distribution(df)
     plot_course_distribution(df)

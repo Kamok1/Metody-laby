@@ -1,4 +1,47 @@
-﻿marital_status_map = {
+﻿numeric_features = [
+                        'Application order',
+                        'Previous qualification (grade)',
+                        'Age at enrollment',
+                        'Admission grade',
+                        'Curricular units 1st sem (credited)',
+                        'Curricular units 1st sem (enrolled)',
+                        'Curricular units 1st sem (evaluations)',
+                        'Curricular units 1st sem (approved)',
+                        'Curricular units 1st sem (grade)',
+                        'Curricular units 1st sem (without evaluations)',
+                        'Curricular units 2nd sem (credited)',
+                        'Curricular units 2nd sem (enrolled)',
+                        'Curricular units 2nd sem (evaluations)',
+                        'Curricular units 2nd sem (approved)',
+                        'Curricular units 2nd sem (grade)',
+                        'Unemployment rate', "Mother's qualification level",
+                        "Father's qualification level"]
+
+
+categorical_features = [
+                           'Displaced',
+                           'Educational special needs',
+                           'Debtor',
+                           'Tuition fees up to date',
+                           'Gender',
+                           'Scholarship holder',
+                           'International',
+                           'Unemployment rate',
+                           'Inflation rate',
+                           'Course Text',
+                           'GDP',
+                           'Target',
+                           'Mother\'s qualification category',
+                           'Marital Status Text',
+                           'Application mode Text',
+                           'Daytime/evening attendance Text',
+                           'Previous qualification Text',
+                           'Nacionality Text',
+                           "Mother's qualification Text",
+                           "Father's qualification Text",
+                           "Mother's occupation Text", "Father's occupation Text" ]
+
+marital_status_map = {
     1: 'Single',
     2: 'Married',
     3: 'Widower',

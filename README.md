@@ -56,56 +56,70 @@ save_statistics_to_csv(df_cleaned)
 ### Bar plots
 
 File: `generate_barplots.py`
+
 ```python
-from generate_barplots import generate_barplots
+from plot_generators.generate_barplots import generate_barplots
+
 generate_barplots(df_cleaned)
 ```
 
 ### Box plots
 
 File: `generate_boxplots.py`
+
 ```python
-from generate_boxplots import generate_boxplots
+from plot_generators.generate_boxplots import generate_boxplots
+
 generate_boxplots(df_cleaned)
 ```
 
 ### Count plots
 
 File: `generate_countplots.py`
+
 ```python
-from generate_countplots import generate_countplots
+from plot_generators.generate_countplots import generate_countplots
+
 generate_countplots(df_cleaned)
 ```
 
 ### Histogram plots
 
 File: `generate_histogram_plots.py`
+
 ```python
-from generate_histogram_plots import generate_hist_plots
+from plot_generators.generate_histogram_plots import generate_hist_plots
+
 generate_hist_plots(df_cleaned)
 ```
 
 ### Regression plots
 
 File: `generate_regression_plots.py`
+
 ```python
-from generate_regression_plots import generate_regression_plots
+from plot_generators.generate_regression_plots import generate_regression_plots
+
 generate_regression_plots(df_cleaned)
 ```
 
 ### Violin plots
 
 File: `generate_violinplots.py`
+
 ```python
-from generate_violinplots import generate_violinplots
+from plot_generators.generate_violinplots import generate_violinplots
+
 generate_violinplots(df_cleaned)
 ```
 
 ### Correlation heatmaps
 
 File: `generate_corelations.py`
+
 ```python
-from generate_corelations import generate_heatmaps
+from plot_generators.generate_corelations import generate_heatmaps
+
 generate_heatmaps(df_cleaned)
 ```
 
@@ -114,8 +128,10 @@ generate_heatmaps(df_cleaned)
 File: `generate_pca.py`
 
 Replace the list of attributes with the relevant numerical columns:
+
 ```python
-from generate_pca import plot_pca
+from plot_generators.generate_pca import plot_pca
+
 plot_pca(df_cleaned, attributes=["attribute1", "attribute2", "attribute3"])
 ```
 

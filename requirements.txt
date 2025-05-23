@@ -1,6 +1,7 @@
 ﻿pandas~=2.2.3
-numpy
-ucimlrepo~=0.0.7
+numpy~=2.2.4
 seaborn~=0.13.2
 matplotlib~=3.10.1
 scikit-learn~=1.6.1
+torch~=2.7.0+cu126
+ucimlrepo~=0.0.7

@@ -1,5 +1,4 @@
 ﻿import os
-
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -34,6 +33,6 @@ def plot_inflation_vs_daytime_attendance(df):
 
 
 def generate_barplots(df):
-    os.makedirs('plots/barplots', exist_ok=True)
+    os.makedirs('../plots/barplots', exist_ok=True)
     plot_inflation_vs_daytime_attendance(df)
     plot_target_vs_course(df)

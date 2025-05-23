@@ -45,7 +45,7 @@ def plot_students_distribution_by_units(df):
 
 
 def generate_hist_plots(df):
-    os.makedirs('plots/histograms', exist_ok=True)
+    os.makedirs('../plots/histograms', exist_ok=True)
     plot_previous_qualification_by_target(df)
     plot_percentage_of_enrolled_by_gdp(df)
     plot_students_distribution_by_units(df)

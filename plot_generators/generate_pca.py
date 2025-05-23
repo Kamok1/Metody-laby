@@ -33,7 +33,7 @@ def plot_pca(df, attributes, n_components=2, exclude_enrolled=True):
     plt.ylabel('Principal Component 2')
     plt.legend(title='Target')
 
-    os.makedirs('plots/pca', exist_ok=True)
+    os.makedirs('../plots/pca', exist_ok=True)
     suffix = "_exclude_enrolled" if exclude_enrolled else ""
     plt.savefig(f'plots/pca/pca{n_components}_plot{suffix}.png', dpi=300)
     plt.close()

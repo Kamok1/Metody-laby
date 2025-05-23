@@ -33,7 +33,7 @@ def plot_mothers_qualification_level_vs_grade(df):
     plt.close()
 
 def generate_boxplots(df):
-    os.makedirs('plots/boxplots', exist_ok=True)
+    os.makedirs('../plots/boxplots', exist_ok=True)
     plot_mothers_qualification_vs_grade(df)
     plot_age_at_enrollment(df)
     plot_mothers_qualification_level_vs_grade(df)

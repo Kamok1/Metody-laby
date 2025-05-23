@@ -1,6 +1,4 @@
-﻿import pandas as pd
-
-from constants import *
+﻿from constants import *
 
 
 def map_education_levels(df):

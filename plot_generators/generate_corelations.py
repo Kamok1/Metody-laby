@@ -13,7 +13,7 @@ def calculate_correlation_matrix(df):
 
 
 def plot_filtered_corr_matrix(correlation_matrix, keys=None):
-    os.makedirs('plots/heatmaps', exist_ok=True)
+    os.makedirs('../plots/heatmaps', exist_ok=True)
 
     if keys is None:
         keys = correlation_matrix.columns.tolist()

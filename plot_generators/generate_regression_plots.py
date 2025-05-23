@@ -42,7 +42,7 @@ def plot_filtered_average_proportion(df):
     plt.close()
 
 def generate_regression_plots(df):
-    os.makedirs('plots/regressions', exist_ok=True)
+    os.makedirs('../plots/regressions', exist_ok=True)
     plot_linear_regression(df)
     plot_filtered_linear_regression(df)
     plot_filtered_average_proportion(df)

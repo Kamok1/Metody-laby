@@ -39,7 +39,7 @@ def plot_grade_distribution_by_age_group(df):
     plt.close()
 
 def generate_violinplots(df):
-    os.makedirs('plots/violinplots', exist_ok=True)
+    os.makedirs('../plots/violinplots', exist_ok=True)
     plot_unemployment_rate_distribution(df)
     plot_grade_distribution_by_age_group(df)
     plot_grade_distribution_by_gender(df)

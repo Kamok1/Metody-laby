@@ -1,15 +1,17 @@
 ﻿import os
 import pandas as pd
+
+from constants import numeric_features, categorical_features
 from data_process import process_data
 from data_summary import save_statistics_to_csv
-from generate_barplots import generate_barplots
-from generate_boxplots import generate_boxplots
-from generate_corelations import generate_heatmaps
-from generate_countplots import generate_countplots
-from generate_histogram_plots import generate_hist_plots
-from generate_pca import plot_pca
-from generate_regression_plots import generate_regression_plots
-from generate_violinplots import generate_violinplots
+from plot_generators.generate_barplots import generate_barplots
+from plot_generators.generate_boxplots import generate_boxplots
+from plot_generators.generate_corelations import generate_heatmaps
+from plot_generators.generate_countplots import generate_countplots
+from plot_generators.generate_histogram_plots import generate_hist_plots
+from plot_generators.generate_pca import plot_pca
+from plot_generators.generate_regression_plots import generate_regression_plots
+from plot_generators.generate_violinplots import generate_violinplots
 
 
 def load_dataset(path, sep=';'):
@@ -22,44 +24,9 @@ def main():
     os.makedirs("plots", exist_ok=True)
 
     process_data(df)
-    save_statistics_to_csv(df, numeric_categories=['Application order', 'Previous qualification (grade)',
-                                                   'Age at enrollment',
-                                                   'Admission grade',
-                                                   'Curricular units 1st sem (credited)',
-                                                   'Curricular units 1st sem (enrolled)',
-                                                   'Curricular units 1st sem (evaluations)',
-                                                   'Curricular units 1st sem (approved)',
-                                                   'Curricular units 1st sem (grade)',
-                                                   'Curricular units 1st sem (without evaluations)',
-                                                   'Curricular units 2nd sem (credited)',
-                                                   'Curricular units 2nd sem (enrolled)',
-                                                   'Curricular units 2nd sem (evaluations)',
-                                                   'Curricular units 2nd sem (approved)',
-                                                   'Curricular units 2nd sem (grade)',
-                                                   'Unemployment rate', "Mother's qualification level",
-                                                   "Father's qualification level"],
-                           categorical_categories=[
-                                                   'Displaced',
-                                                   'Educational special needs',
-                                                   'Debtor',
-                                                   'Tuition fees up to date',
-                                                   'Gender',
-                                                   'Scholarship holder',
-                                                   'International',
-                                                   'Unemployment rate',
-                                                   'Inflation rate',
-                                                   'Course Text',
-                                                   'GDP',
-                                                   'Target',
-                                                   'Mother\'s qualification category',
-                                                   'Marital Status Text',
-                                                   'Application mode Text',
-                                                   'Daytime/evening attendance Text',
-                                                   'Previous qualification Text',
-                                                   'Nacionality Text',
-                                                   "Mother's qualification Text",
-                                                   "Father's qualification Text",
-                                                   "Mother's occupation Text", "Father's occupation Text", ])
+
+    save_statistics_to_csv(df, numeric_categories=numeric_features,
+                           categorical_categories=categorical_features)
     generate_barplots(df)
     generate_boxplots(df)
     generate_heatmaps(df)
