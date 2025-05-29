@@ -25,6 +25,9 @@
 
 ## Running the full project
 
+Note:
+The second part of the project is located in the folder /part2.
+
 To execute the full analysis and generate all visualizations and summaries, run:
 
 ```
