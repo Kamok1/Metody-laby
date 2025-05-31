@@ -61,20 +61,22 @@ class CustomLogisticRegression:
                 self.w_ -= self.lr * grad
                 self.b_ -= self.lr * self.grad_fn(yb, p).mean()
 
-            p_tr  = self._sigmoid(X_train @ self.w_ + self.b_)
+            p_tr = self._sigmoid(X_train @ self.w_ + self.b_)
             Htr.append(self.loss_fn(y_train, p_tr))
-            if X_val is not None:
-                p_val = self._sigmoid(X_val @ self.w_ + self.b_)
-                Hval.append(self.loss_fn(y_val, p_val))
-            if X_test is not None:
-                p_te  = self._sigmoid(X_test @ self.w_ + self.b_)
+
+            if X_test is not None and y_test is not None:
+                p_te = self._sigmoid(X_test @ self.w_ + self.b_)
                 Hte.append(self.loss_fn(y_test, p_te))
 
             if self.verbose and (ep == 0 or (ep + 1) % 20 == 0):
-                msg = f"Epoch {ep+1:3d}/{self.epochs}  train_loss={Htr[-1]:.4f}"
-                if Hval:
-                    msg += f"  val_loss={Hval[-1]:.4f}"
+                msg = f"Epoch {ep + 1:3d}/{self.epochs}  train_loss={Htr[-1]:.4f}"
+                if X_test is not None:
+                    msg += f"  test_loss={Hte[-1]:.4f}"
                 print(msg)
+
+        if X_val is not None and y_val is not None:
+            p_val = self._sigmoid(X_val @ self.w_ + self.b_)
+            Hval = [self.loss_fn(y_val, p_val)]
 
         self.history = {"train": Htr, "val": Hval, "test": Hte}
         return self
@@ -89,20 +91,3 @@ class CustomLogisticRegression:
     def score(self, X: np.ndarray, y: np.ndarray) -> float:
         return accuracy_score(y, self.predict(X))
 
-    def get_params(self) -> Dict[str, float]:
-        return {
-            "lr": self.lr,
-            "epochs": self.epochs,
-            "batch_size": self.batch_sz,
-            "l1": self.l1,
-            "l2": self.l2,
-            "seed": self.seed,
-            "verbose": self.verbose,
-            "loss_fn": self.loss_fn,
-            "grad_fn": self.grad_fn,
-        }
-
-    def set_params(self, **kwargs):
-        for k, v in kwargs.items():
-            setattr(self, k, v)
-        return self
