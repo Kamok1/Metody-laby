@@ -5,3 +5,4 @@ matplotlib~=3.10.1
 scikit-learn~=1.6.1
 torch~=2.7.0+cu126
 ucimlrepo~=0.0.7
+imbalanced-learn~=0.13.0
